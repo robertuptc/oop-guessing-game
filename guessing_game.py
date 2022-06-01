@@ -1,19 +1,21 @@
-class GuessingGame():
+class GuessingGame:
     def __init__(self, answer):
         self.answer = answer
+        self.check = False
 
     def guess(self, user_guess):
-        self.user_guess = user_guess
-        if user_guess < self.answer :
-            return 'low'
-        elif user_guess > self.answer :
-            return 'high'
+        if user_guess > self.answer:
+            print('high')
+        elif user_guess < self.answer:
+            print("low")
         else:
-            return "correct"
-    
-    def solved(self):
-        return self.user_guess == self.answer
+            user_guess == self.answer
+            self.check = True
+            print("correct")
 
-game = GuessingGame(10)
-print(game.guess(10))
-print(game.solved())
+    def solved(self):
+        return self.check
+
+x = GuessingGame(25)
+(x.guess(26))
+print(x.solved())
